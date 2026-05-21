@@ -1,0 +1,561 @@
+{
+  "website": {
+    "meta": {
+      "title": "Best Hospital | General Surgery & Gynecology Clinic",
+      "description": "Expert surgical and gynecological care at [Hospital Name]. Consult our experienced Surgeon and Gynecologist for advanced treatments. Book an appointment today!",
+      "keywords": ["hospital", "surgeon", "gynecologist", "general surgery", "gynecology", "women's health", "laparoscopy"]
+    },
+
+    "header": {
+      "logo": {
+        "src": "/assets/images/logo.png",
+        "alt": "Hospital Logo",
+        "link": "/"
+      },
+      "topBar": {
+        "phone": "+91-XXXXXXXXXX",
+        "ctaButton": {
+          "label": "Book an Appointment",
+          "link": "/book-appointment",
+          "icon": "/assets/icons/calendar.png"
+        }
+      },
+      "navigation": [
+        {
+          "label": "About Us",
+          "link": "/about",
+          "dropdown": [
+            { "label": "About the Hospital", "link": "/about" },
+            { "label": "Our Doctors", "link": "/about#doctors" },
+            { "label": "Our Facilities", "link": "/about#facilities" }
+          ]
+        },
+        {
+          "label": "Treatments",
+          "link": "/treatments",
+          "dropdown": [
+            {
+              "label": "General Surgery",
+              "link": "/treatments/general-surgery",
+              "icon": "/assets/icons/surgery.png"
+            },
+            {
+              "label": "Laparoscopic Surgery",
+              "link": "/treatments/laparoscopic-surgery",
+              "icon": "/assets/icons/laparoscopy.png"
+            },
+            {
+              "label": "Gynecology Consultation",
+              "link": "/treatments/gynecology",
+              "icon": "/assets/icons/gynecology.png"
+            },
+            {
+              "label": "Obstetrics & Maternity",
+              "link": "/treatments/obstetrics",
+              "icon": "/assets/icons/maternity.png"
+            },
+            {
+              "label": "Women's Health Checkup",
+              "link": "/treatments/womens-health",
+              "icon": "/assets/icons/health-checkup.png"
+            },
+            {
+              "label": "Emergency Surgery",
+              "link": "/treatments/emergency-surgery",
+              "icon": "/assets/icons/emergency.png"
+            },
+            {
+              "label": "Appendix & Hernia Surgery",
+              "link": "/treatments/appendix-hernia",
+              "icon": "/assets/icons/hernia.png"
+            },
+            {
+              "label": "Gallbladder Surgery",
+              "link": "/treatments/gallbladder",
+              "icon": "/assets/icons/gallbladder.png"
+            },
+            {
+              "label": "PCOD / PCOS Treatment",
+              "link": "/treatments/pcos",
+              "icon": "/assets/icons/pcos.png"
+            },
+            {
+              "label": "Fibroid & Cyst Removal",
+              "link": "/treatments/fibroid-cyst",
+              "icon": "/assets/icons/fibroid.png"
+            },
+            {
+              "label": "Hysterectomy",
+              "link": "/treatments/hysterectomy",
+              "icon": "/assets/icons/hysterectomy.png"
+            }
+          ]
+        },
+        {
+          "label": "Our Doctors",
+          "link": "/doctors"
+        },
+        {
+          "label": "Patient Info",
+          "link": "/patient-info",
+          "dropdown": [
+            { "label": "Patient Reviews", "link": "/reviews" },
+            { "label": "Patient Testimonials", "link": "/testimonials" },
+            { "label": "FAQs", "link": "/faq" },
+            { "label": "Health Blogs", "link": "/blog" }
+          ]
+        },
+        {
+          "label": "Contact Us",
+          "link": "/contact"
+        }
+      ]
+    },
+
+    "pages": {
+      "home": {
+        "heroBanner": {
+          "desktopImage": "/assets/banners/hero-desktop.webp",
+          "mobileImage": "/assets/banners/hero-mobile.webp",
+          "heading": "Expert Surgical & Gynecological Care",
+          "subheading": "Compassionate care from experienced specialists — your health is our priority",
+          "cta": [
+            { "label": "Call Now", "link": "tel:+91XXXXXXXXXX", "type": "primary" },
+            { "label": "Book Appointment", "link": "/book-appointment", "type": "secondary" }
+          ]
+        },
+
+        "aboutSection": {
+          "heading": "About Our Hospital",
+          "description": "Welcome to [Hospital Name], where expert surgical skill meets compassionate patient care. Led by a highly experienced General Surgeon and Gynecologist, our hospital is committed to providing advanced, evidence-based treatments in a comfortable and safe environment. From routine consultations to complex surgeries, we are here for every step of your health journey.",
+          "cta": { "label": "Learn More About Us", "link": "/about" }
+        },
+
+        "doctorsSection": {
+          "heading": "Meet Our Doctors",
+          "doctors": [
+            {
+              "name": "Dr. [Surgeon Name]",
+              "photo": "/assets/doctors/surgeon.jpg",
+              "qualifications": "MBBS, MS (General Surgery), FMAS",
+              "specialization": "General & Laparoscopic Surgeon",
+              "experience": "X+ Years of Experience",
+              "cta": [
+                { "label": "Book an Appointment", "link": "/book-appointment" },
+                { "label": "Call to Talk", "link": "tel:+91XXXXXXXXXX" },
+                { "label": "Know Your Doctor", "link": "/doctors/surgeon" }
+              ]
+            },
+            {
+              "name": "Dr. [Gynecologist Name]",
+              "photo": "/assets/doctors/gynecologist.jpg",
+              "qualifications": "MBBS, MD (Obstetrics & Gynecology), DGO",
+              "specialization": "Gynecologist & Obstetrician",
+              "experience": "X+ Years of Experience",
+              "cta": [
+                { "label": "Book an Appointment", "link": "/book-appointment" },
+                { "label": "Call to Talk", "link": "tel:+91XXXXXXXXXX" },
+                { "label": "Know Your Doctor", "link": "/doctors/gynecologist" }
+              ]
+            }
+          ]
+        },
+
+        "servicesSection": {
+          "heading": "Our Services",
+          "services": [
+            {
+              "id": "laparoscopic-surgery",
+              "title": "Laparoscopic Surgery",
+              "description": "Minimally invasive surgical procedures with faster recovery, smaller incisions, and reduced post-operative pain. Suitable for gallbladder, hernia, appendix, and more.",
+              "icon": "/assets/icons/laparoscopy.png",
+              "link": "/treatments/laparoscopic-surgery"
+            },
+            {
+              "id": "general-surgery",
+              "title": "General Surgery",
+              "description": "Comprehensive surgical care for abdominal, digestive, and soft tissue conditions. From diagnosis to post-operative recovery, we ensure complete care.",
+              "icon": "/assets/icons/surgery.png",
+              "link": "/treatments/general-surgery"
+            },
+            {
+              "id": "gynecology-consultation",
+              "title": "Gynecology Consultation",
+              "description": "Expert evaluation and treatment for all women's health concerns including menstrual disorders, PCOS, infections, and hormonal imbalances.",
+              "icon": "/assets/icons/gynecology.png",
+              "link": "/treatments/gynecology"
+            },
+            {
+              "id": "obstetrics-maternity",
+              "title": "Obstetrics & Maternity",
+              "description": "Complete prenatal, antenatal, and postnatal care for expecting mothers. Safe delivery options with expert monitoring throughout the pregnancy journey.",
+              "icon": "/assets/icons/maternity.png",
+              "link": "/treatments/obstetrics"
+            },
+            {
+              "id": "pcos-treatment",
+              "title": "PCOD / PCOS Treatment",
+              "description": "Personalised treatment plans for Polycystic Ovarian Disease including hormonal therapy, lifestyle guidance, and surgical options when required.",
+              "icon": "/assets/icons/pcos.png",
+              "link": "/treatments/pcos"
+            },
+            {
+              "id": "gallbladder-surgery",
+              "title": "Gallbladder Surgery",
+              "description": "Laparoscopic cholecystectomy (gallbladder removal) performed with precision and care, ensuring minimal recovery time and maximum patient comfort.",
+              "icon": "/assets/icons/gallbladder.png",
+              "link": "/treatments/gallbladder"
+            },
+            {
+              "id": "hernia-surgery",
+              "title": "Hernia Surgery",
+              "description": "Advanced hernia repair using laparoscopic techniques for inguinal, umbilical, and incisional hernias. Quick recovery with lasting results.",
+              "icon": "/assets/icons/hernia.png",
+              "link": "/treatments/hernia"
+            },
+            {
+              "id": "fibroid-cyst-removal",
+              "title": "Fibroid & Ovarian Cyst Removal",
+              "description": "Surgical and non-surgical management of uterine fibroids and ovarian cysts through laparoscopic myomectomy and cystectomy procedures.",
+              "icon": "/assets/icons/fibroid.png",
+              "link": "/treatments/fibroid-cyst"
+            },
+            {
+              "id": "hysterectomy",
+              "title": "Hysterectomy",
+              "description": "Total or partial removal of the uterus performed laparoscopically or open, depending on the patient's condition. Expert counselling provided before and after.",
+              "icon": "/assets/icons/hysterectomy.png",
+              "link": "/treatments/hysterectomy"
+            },
+            {
+              "id": "appendix-surgery",
+              "title": "Appendix Surgery",
+              "description": "Emergency and elective appendectomy using laparoscopic methods, ensuring fast recovery and minimal scarring.",
+              "icon": "/assets/icons/appendix.png",
+              "link": "/treatments/appendix"
+            },
+            {
+              "id": "womens-health-checkup",
+              "title": "Women's Health Checkup",
+              "description": "Routine wellness exams including Pap smear, breast examination, pelvic ultrasound, and hormonal profiling for proactive women's health management.",
+              "icon": "/assets/icons/health-checkup.png",
+              "link": "/treatments/womens-health"
+            },
+            {
+              "id": "emergency-surgery",
+              "title": "Emergency Surgery",
+              "description": "Round-the-clock surgical emergency services for acute abdominal conditions, trauma, and urgent gynecological complications.",
+              "icon": "/assets/icons/emergency.png",
+              "link": "/treatments/emergency-surgery"
+            }
+          ]
+        },
+
+        "whyChooseUs": {
+          "heading": "Why Choose Us?",
+          "points": [
+            {
+              "title": "Experienced Specialists",
+              "description": "Our surgeon and gynecologist bring years of expertise in their respective fields with hundreds of successful procedures.",
+              "icon": "/assets/icons/doctor-badge.png"
+            },
+            {
+              "title": "Advanced Laparoscopic Equipment",
+              "description": "We use the latest minimally invasive surgical tools to ensure precision, faster recovery, and minimal discomfort.",
+              "icon": "/assets/icons/equipment.png"
+            },
+            {
+              "title": "Patient-First Approach",
+              "description": "Every patient receives a personalised treatment plan with transparent communication, honest pricing, and compassionate follow-up care.",
+              "icon": "/assets/icons/patient-first.png"
+            },
+            {
+              "title": "Comprehensive Care Under One Roof",
+              "description": "From initial consultation to surgery, recovery, and follow-up — everything is handled within our hospital for your convenience.",
+              "icon": "/assets/icons/hospital.png"
+            }
+          ]
+        },
+
+        "statsSection": {
+          "stats": [
+            { "value": "XXXX+", "label": "Successful Surgeries" },
+            { "value": "XX+", "label": "Years of Experience" },
+            { "value": "XXXX+", "label": "Happy Patients" },
+            { "value": "24/7", "label": "Emergency Services" }
+          ]
+        },
+
+        "appointmentSteps": {
+          "heading": "How to Book an Appointment",
+          "steps": [
+            {
+              "step": 1,
+              "title": "Visit Our Website or Call Us",
+              "description": "Click 'Book Appointment' on the website or call our helpline directly to get started."
+            },
+            {
+              "step": 2,
+              "title": "Choose Your Doctor",
+              "description": "Select between our General Surgeon or Gynecologist based on your medical need."
+            },
+            {
+              "step": 3,
+              "title": "Fill in Your Details",
+              "description": "Provide your name, contact number, and a brief description of your concern."
+            },
+            {
+              "step": 4,
+              "title": "Receive Confirmation",
+              "description": "You will receive a confirmation via call or SMS with your appointment date and time."
+            },
+            {
+              "step": 5,
+              "title": "Visit the Hospital",
+              "description": "Bring your previous medical records and reports on the day of your appointment."
+            }
+          ]
+        },
+
+        "testimonialsSection": {
+          "heading": "What Our Patients Say",
+          "subheading": "Real experiences from patients who trusted us with their health.",
+          "testimonials": [
+            {
+              "name": "Patient Name 1",
+              "review": "Placeholder testimonial — replace with real patient review.",
+              "rating": 5
+            },
+            {
+              "name": "Patient Name 2",
+              "review": "Placeholder testimonial — replace with real patient review.",
+              "rating": 5
+            },
+            {
+              "name": "Patient Name 3",
+              "review": "Placeholder testimonial — replace with real patient review.",
+              "rating": 5
+            }
+          ]
+        },
+
+        "faqSection": {
+          "heading": "Frequently Asked Questions",
+          "faqs": [
+            {
+              "question": "What conditions does the General Surgeon treat?",
+              "answer": "Our General Surgeon handles conditions like gallstones, hernias, appendicitis, thyroid lumps, soft tissue masses, and abdominal emergencies among others."
+            },
+            {
+              "question": "Is laparoscopic surgery safe?",
+              "answer": "Yes, laparoscopic (keyhole) surgery is very safe. It involves smaller incisions, less bleeding, lower infection risk, and faster recovery compared to open surgery."
+            },
+            {
+              "question": "What does the Gynecologist treat?",
+              "answer": "Our Gynecologist handles PCOS, irregular periods, fibroids, ovarian cysts, pregnancy care, menopause management, and routine women's health checkups."
+            },
+            {
+              "question": "Do I need a referral to book an appointment?",
+              "answer": "No referral is needed. You can directly book an appointment with either of our doctors for a consultation."
+            },
+            {
+              "question": "Does the hospital offer emergency surgical services?",
+              "answer": "Yes, we provide 24/7 emergency surgical care for acute conditions. Please call our helpline immediately in case of an emergency."
+            },
+            {
+              "question": "How long is the recovery after laparoscopic surgery?",
+              "answer": "Most patients recover within 3–7 days for laparoscopic procedures, compared to 2–4 weeks for open surgery, depending on the specific procedure."
+            },
+            {
+              "question": "Is pregnancy care available at this hospital?",
+              "answer": "Yes, our Gynecologist provides complete antenatal, delivery, and postnatal care for expecting mothers."
+            }
+          ]
+        },
+
+        "mapSection": {
+          "heading": "Find Us",
+          "address": "[Hospital Address], [City], [State] - [PIN Code]",
+          "googleMapsEmbed": "PASTE_GOOGLE_MAPS_EMBED_URL_HERE",
+          "phone": "+91-XXXXXXXXXX",
+          "email": "contact@hospitaldomain.com",
+          "workingHours": {
+            "weekdays": "9:00 AM – 8:00 PM",
+            "saturday": "9:00 AM – 5:00 PM",
+            "sunday": "Emergency Only"
+          }
+        }
+      }
+    },
+
+    "appointmentForm": {
+      "heading": "Book an Appointment",
+      "fields": [
+        { "name": "fullName", "type": "text", "label": "Full Name", "required": true },
+        { "name": "mobile", "type": "tel", "label": "Mobile Number", "required": true },
+        { "name": "email", "type": "email", "label": "Email Address", "required": false },
+        {
+          "name": "doctor",
+          "type": "select",
+          "label": "Select Doctor",
+          "required": true,
+          "options": [
+            "Dr. [Surgeon Name] — General Surgery",
+            "Dr. [Gynecologist Name] — Gynecology"
+          ]
+        },
+        {
+          "name": "concern",
+          "type": "textarea",
+          "label": "Brief description of your concern",
+          "required": false
+        },
+        {
+          "name": "preferredDate",
+          "type": "date",
+          "label": "Preferred Appointment Date",
+          "required": false
+        }
+      ],
+      "submitButton": "Request Appointment",
+      "privacyPolicyLink": "/privacy-policy"
+    },
+
+    "footer": {
+      "logo": "/assets/images/logo.png",
+      "tagline": "Trusted surgical and women's health care — because your health matters.",
+      "sections": [
+        {
+          "heading": "About",
+          "links": [
+            { "label": "About the Hospital", "link": "/about" },
+            { "label": "Our Doctors", "link": "/doctors" },
+            { "label": "Our Facilities", "link": "/about#facilities" },
+            { "label": "Privacy Policy", "link": "/privacy-policy" }
+          ]
+        },
+        {
+          "heading": "Treatments",
+          "links": [
+            { "label": "General Surgery", "link": "/treatments/general-surgery" },
+            { "label": "Laparoscopic Surgery", "link": "/treatments/laparoscopic-surgery" },
+            { "label": "Gynecology", "link": "/treatments/gynecology" },
+            { "label": "Obstetrics & Maternity", "link": "/treatments/obstetrics" },
+            { "label": "PCOS Treatment", "link": "/treatments/pcos" },
+            { "label": "Emergency Surgery", "link": "/treatments/emergency-surgery" }
+          ]
+        },
+        {
+          "heading": "Patient Resources",
+          "links": [
+            { "label": "FAQs", "link": "/faq" },
+            { "label": "Patient Reviews", "link": "/reviews" },
+            { "label": "Health Blog", "link": "/blog" },
+            { "label": "Book Appointment", "link": "/book-appointment" }
+          ]
+        },
+        {
+          "heading": "Contact Us",
+          "address": "[Hospital Address], [City] - [PIN]",
+          "phone": "+91-XXXXXXXXXX",
+          "email": "contact@hospitaldomain.com",
+          "socialMedia": [
+            { "platform": "Facebook", "url": "https://facebook.com/hospitalpage" },
+            { "platform": "Instagram", "url": "https://instagram.com/hospitalpage" },
+            { "platform": "YouTube", "url": "https://youtube.com/hospitalpage" }
+          ]
+        }
+      ],
+      "newsletter": {
+        "heading": "Stay Updated",
+        "placeholder": "Enter your email address",
+        "buttonLabel": "Subscribe"
+      },
+      "copyright": "© 2026 [Hospital Name]. All rights reserved."
+    },
+
+    "colorScheme": {
+      "primary": "#028090",
+      "primaryDark": "#016673",
+      "primaryDarker": "#015964",
+      "primaryLight": "#4DA6B1",
+      "primaryLighter": "#99CCD2",
+      "primaryPale": "#E5F2F3",
+      "accent": "#F4A732",
+      "accentHover": "#D98E1A",
+      "text": "#2D2D2D",
+      "textLight": "#6B6B6B",
+      "textOnPrimary": "#FFFFFF",
+      "background": "#FFFFFF",
+      "backgroundSecondary": "#F0F9FA",
+      "border": "#CCE5E8",
+      "success": "#28A745",
+      "error": "#DC3545",
+      "usage": {
+        "navbarBackground": "#028090",
+        "navbarText": "#FFFFFF",
+        "heroBannerOverlay": "#028090 at 70% opacity",
+        "ctaButtonPrimary": "#028090",
+        "ctaButtonPrimaryHover": "#016673",
+        "ctaButtonSecondary": "#FFFFFF with #028090 border",
+        "sectionHeadings": "#028090",
+        "cardBorder": "#CCE5E8",
+        "cardIconBackground": "#E5F2F3",
+        "footerBackground": "#015964",
+        "footerText": "#FFFFFF",
+        "statsBackground": "#028090",
+        "statsText": "#FFFFFF",
+        "badgeBackground": "#E5F2F3",
+        "badgeText": "#028090",
+        "accentHighlights": "#F4A732"
+      }
+    },
+
+    "typography": {
+      "headingFont": "Playfair Display or Merriweather (serif — trustworthy, medical feel)",
+      "bodyFont": "Inter or Poppins (sans-serif — clean and readable)",
+      "headingSizes": {
+        "h1": "48px",
+        "h2": "36px",
+        "h3": "24px",
+        "h4": "20px"
+      }
+    },
+
+    "designNotes": {
+      "tone": "Professional, warm, and trustworthy. Avoid overly clinical coldness — the website should feel approachable and reassuring.",
+      "keyDifferences": [
+        "Two doctors instead of one — give equal prominence to both Surgeon and Gynecologist",
+        "Separate service sections for Surgery vs Gynecology to avoid confusion",
+        "Emergency surgery CTA should be prominently visible in header on mobile",
+        "Patient testimonials should reference specific treatments (surgery, delivery, etc.) not just general praise",
+        "Stats section should highlight surgery count, years experience, and patient satisfaction"
+      ],
+      "pagesNeeded": [
+        "/",
+        "/about",
+        "/doctors",
+        "/doctors/surgeon",
+        "/doctors/gynecologist",
+        "/treatments",
+        "/treatments/general-surgery",
+        "/treatments/laparoscopic-surgery",
+        "/treatments/gynecology",
+        "/treatments/obstetrics",
+        "/treatments/pcos",
+        "/treatments/gallbladder",
+        "/treatments/hernia",
+        "/treatments/fibroid-cyst",
+        "/treatments/hysterectomy",
+        "/treatments/emergency-surgery",
+        "/book-appointment",
+        "/reviews",
+        "/testimonials",
+        "/faq",
+        "/blog",
+        "/contact",
+        "/privacy-policy"
+      ]
+    }
+  }
+}
