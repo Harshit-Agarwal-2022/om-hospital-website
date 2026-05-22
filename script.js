@@ -7,12 +7,22 @@
 // CONFIGURATION — Update these values
 // ============================================
 const CONFIG = {
-  // WhatsApp number in international format without + or spaces
-  // Example: 919876543210 for +91 98765 43210
-  whatsappNumber: '919876543210',
   hospitalName: 'Shree Om Hospital',
-  // 10-digit mobile for Call Now (no country code)
+  // 10-digit Indian mobile (Call Now + WhatsApp appointments)
   phoneNumber: '9829895006',
+  doctorPhones: {
+    vivek: '9829895006',
+    rashi: '9351711300',
+  },
+  mapsPlaceUrl:
+    'https://www.google.com/maps/place/Shri+Om+Hospital/@26.6027272,75.9454406,17z/data=!3m1!4b1!4m6!3m5!1s0x396ddbacdb24f5d3:0xbb66e8a80b2afaeb!8m2!3d26.6027272!4d75.9480155!16s%2Fg%2F11c2p49c9l?entry=ttu',
+  mapsEmbedUrl:
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13622.4!2d75.9480155!3d26.6027272!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396ddbacdb24f5d3%3A0xbb66e8a80b2afaeb!2sShri%20Om%20Hospital!5e0!3m2!1sen!2sin!4v1730000000000!5m2!1sen!2sin',
+  addressLines: [
+    'Shree Om Hospital, Chaksu Road,',
+    'Akodiya, Chaksu, Jaipur, Rajasthan — 303901',
+  ],
+  addressShort: 'Chaksu Road, Akodiya, Chaksu, Jaipur — 303901',
 };
 
 // ============================================
@@ -36,21 +46,45 @@ if (preferredDateInput) {
 }
 
 // ============================================
-// WhatsApp Helpers
+// WhatsApp Helpers (mobile app / desktop Web)
 // ============================================
-function buildWhatsAppUrl(message) {
+const MOBILE_LAYOUT_MEDIA = '(max-width: 768px)';
+
+function isMobileLayout() {
+  return window.matchMedia(MOBILE_LAYOUT_MEDIA).matches;
+}
+
+function getWhatsAppNumber() {
+  return `91${CONFIG.phoneNumber}`;
+}
+
+function buildWhatsAppUrl(message, { forWeb = false } = {}) {
   const encoded = encodeURIComponent(message);
-  return `https://wa.me/${CONFIG.whatsappNumber}?text=${encoded}`;
+  const phone = getWhatsAppNumber();
+  if (forWeb) {
+    return `https://web.whatsapp.com/send?phone=${phone}&text=${encoded}`;
+  }
+  return `https://wa.me/${phone}?text=${encoded}`;
 }
 
 function openWhatsApp(message) {
-  window.open(buildWhatsAppUrl(message), '_blank', 'noopener,noreferrer');
+  const forWeb = !isMobileLayout();
+  const url = buildWhatsAppUrl(message, { forWeb });
+
+  if (forWeb) {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  } else {
+    window.location.href = url;
+  }
 }
 
 // Set floating WhatsApp button link
 if (whatsappFloat) {
   const defaultMessage = `Hello ${CONFIG.hospitalName}, I would like to inquire about an appointment.`;
-  whatsappFloat.href = buildWhatsAppUrl(defaultMessage);
+  whatsappFloat.addEventListener('click', (e) => {
+    e.preventDefault();
+    openWhatsApp(defaultMessage);
+  });
 }
 
 // ============================================
@@ -135,8 +169,6 @@ document.addEventListener('keydown', (e) => {
 // ============================================
 // Call Now — desktop popup, mobile dialer
 // ============================================
-const CALL_MOBILE_MEDIA = '(max-width: 768px)';
-
 function formatPhoneDisplay(number) {
   if (number.length === 10) {
     return `+91 ${number.slice(0, 5)} ${number.slice(5)}`;
@@ -144,18 +176,55 @@ function formatPhoneDisplay(number) {
   return `+91 ${number}`;
 }
 
-function getTelHref() {
-  return `tel:+91${CONFIG.phoneNumber}`;
+function initContactDetails() {
+  const telHref = getTelHref();
+  const phoneDisplay = formatPhoneDisplay(CONFIG.phoneNumber);
+
+  document.querySelectorAll('[data-phone-link]').forEach((el) => {
+    el.setAttribute('href', telHref);
+    if (el.hasAttribute('data-phone-text')) {
+      el.textContent = phoneDisplay;
+    }
+  });
+
+  const directions = document.getElementById('getDirections');
+  if (directions) directions.href = CONFIG.mapsPlaceUrl;
+
+  const mapFrame = document.getElementById('locationMap');
+  if (mapFrame) mapFrame.src = CONFIG.mapsEmbedUrl;
+
+  const addressEl = document.getElementById('locationAddress');
+  if (addressEl) {
+    addressEl.innerHTML = CONFIG.addressLines.join('<br>');
+  }
+
+  const footerAddress = document.getElementById('footerAddress');
+  if (footerAddress) footerAddress.textContent = CONFIG.addressShort;
+}
+
+function resolveCallPhone(trigger) {
+  const fromButton = trigger?.getAttribute('data-phone');
+  if (fromButton) return fromButton.replace(/\D/g, '');
+  return CONFIG.phoneNumber;
+}
+
+function getTelHref(phone = CONFIG.phoneNumber) {
+  return `tel:+91${phone}`;
 }
 
 function isMobileCallContext() {
-  return window.matchMedia(CALL_MOBILE_MEDIA).matches;
+  return isMobileLayout();
 }
 
-function openCallModal() {
+function openCallModal(phone, subtitle = '') {
   if (!callModal) return;
   if (callModalPhone) {
-    callModalPhone.textContent = formatPhoneDisplay(CONFIG.phoneNumber);
+    callModalPhone.textContent = formatPhoneDisplay(phone);
+  }
+  const callModalSubtitle = document.getElementById('callModalSubtitle');
+  if (callModalSubtitle) {
+    callModalSubtitle.textContent =
+      subtitle || 'Reach Shree Om Hospital on the number below.';
   }
   callModal.classList.add('active');
   callModal.setAttribute('aria-hidden', 'false');
@@ -180,11 +249,14 @@ document.querySelectorAll('[data-call-now]').forEach((btn) => {
       document.body.style.overflow = '';
     }
 
+    const phone = resolveCallPhone(btn);
+    const subtitle = btn.getAttribute('data-call-label') || '';
+
     if (isMobileCallContext()) {
-      window.location.href = getTelHref();
+      window.location.href = getTelHref(phone);
       return;
     }
-    openCallModal();
+    openCallModal(phone, subtitle);
   });
 });
 
@@ -320,3 +392,5 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     target.scrollIntoView({ behavior: 'smooth' });
   });
 });
+
+initContactDetails();

@@ -16,9 +16,9 @@
   <!-- Top Bar -->
   <div class="top-bar">
     <div class="container top-bar__inner">
-      <a href="tel:+919876543210" class="top-bar__phone">
+      <a href="tel:+919829895006" class="top-bar__phone" data-phone-link data-phone-text>
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        +91 98765 43210
+        +91 98298 95006
       </a>
       <span class="top-bar__hours">Open Mon–Sat: 9:00 AM – 8:00 PM</span>
     </div>
@@ -84,7 +84,7 @@
         <span class="stats__label">Successful Surgeries</span>
       </div>
       <div class="stats__item">
-        <span class="stats__value">15+</span>
+        <span class="stats__value">20+</span>
         <span class="stats__label">Years of Experience</span>
       </div>
       <div class="stats__item">
@@ -162,11 +162,11 @@
             <h3 class="doctor-card__name">Dr. Vivek Agrawal</h3>
             <p class="doctor-card__qual">MBBS, MS (General Surgery), FMAS</p>
             <p class="doctor-card__spec">General &amp; Laparoscopic Surgeon</p>
-            <p class="doctor-card__exp">18+ Years of Experience</p>
+            <p class="doctor-card__exp">25+ Years of Experience</p>
             <p class="doctor-card__bio">Specialises in laparoscopic gallbladder, hernia, and appendix surgeries with hundreds of successful procedures.</p>
             <div class="doctor-card__actions">
               <button type="button" class="btn btn--primary btn--sm" data-open-appointment data-doctor="Dr. Vivek Agrawal — General Surgery">Book Appointment</button>
-              <a href="tel:+919876543210" class="btn btn--outline btn--sm">Call to Talk</a>
+              <button type="button" class="btn btn--outline btn--sm" data-call-now data-phone="9829895006" data-call-label="Call Dr. Vivek Agrawal on the number below.">Call to Talk</button>
             </div>
           </div>
         </article>
@@ -180,11 +180,11 @@
             <h3 class="doctor-card__name">Dr. Rashi Agrawal</h3>
             <p class="doctor-card__qual">MBBS, MD (Obstetrics &amp; Gynecology), DGO</p>
             <p class="doctor-card__spec">Gynecologist &amp; Obstetrician</p>
-            <p class="doctor-card__exp">15+ Years of Experience</p>
+            <p class="doctor-card__exp">25+ Years of Experience</p>
             <p class="doctor-card__bio">Expert in PCOS, fibroids, maternity care, and women's health checkups with a gentle, patient-centred approach.</p>
             <div class="doctor-card__actions">
               <button type="button" class="btn btn--primary btn--sm" data-open-appointment data-doctor="Dr. Rashi Agrawal — Gynecology">Book Appointment</button>
-              <a href="tel:+919876543210" class="btn btn--outline btn--sm">Call to Talk</a>
+              <button type="button" class="btn btn--outline btn--sm" data-call-now data-phone="9351711300" data-call-label="Call Dr. Rashi Agrawal on the number below.">Call to Talk</button>
             </div>
           </div>
         </article>
@@ -318,7 +318,7 @@
             </div>
             <div>
               <h3>Address</h3>
-              <p>Shree Om Hospital, 42 Medical Complex Road,<br>Near City Mall, Pune, Maharashtra — 411001</p>
+              <p id="locationAddress">Shree Om Hospital, Chaksu Road,<br>Akodiya, Chaksu, Jaipur, Rajasthan — 303901</p>
             </div>
           </div>
           <div class="location__detail">
@@ -327,7 +327,7 @@
             </div>
             <div>
               <h3>Phone</h3>
-              <p><a href="tel:+919876543210">+91 98765 43210</a></p>
+              <p><a href="tel:+919829895006" data-phone-link data-phone-text>+91 98298 95006</a></p>
             </div>
           </div>
           <div class="location__detail">
@@ -348,12 +348,13 @@
               <p><a href="mailto:contact@shreeomhospital.com">contact@shreeomhospital.com</a></p>
             </div>
           </div>
-          <a href="https://maps.google.com/?q=Shree+Om+Hospital+Pune" target="_blank" rel="noopener noreferrer" class="btn btn--primary">Get Directions</a>
+          <a href="https://www.google.com/maps/place/Shri+Om+Hospital/@26.6027272,75.9454406,17z/data=!3m1!4b1!4m6!3m5!1s0x396ddbacdb24f5d3:0xbb66e8a80b2afaeb!8m2!3d26.6027272!4d75.9480155!16s%2Fg%2F11c2p49c9l?entry=ttu" id="getDirections" target="_blank" rel="noopener noreferrer" class="btn btn--primary">Get Directions</a>
         </div>
         <div class="location__map">
           <iframe
+            id="locationMap"
             title="Shree Om Hospital location on Google Maps"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.261582606753!2d73.8567!3d18.5204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDMxJzEzLjQiTiA3M8KwNTEnMjQuMSJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13622.4!2d75.9480155!3d26.6027272!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396ddbacdb24f5d3%3A0xbb66e8a80b2afaeb!2sShri%20Om%20Hospital!5e0!3m2!1sen!2sin!4v1730000000000!5m2!1sen!2sin"
             width="100%"
             height="100%"
             style="border:0;"
@@ -406,8 +407,8 @@
         <div class="footer__col">
           <h4>Contact</h4>
           <ul class="footer__contact-list">
-            <li>42 Medical Complex Road, Pune — 411001</li>
-            <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+            <li id="footerAddress">Chaksu Road, Akodiya, Chaksu, Jaipur — 303901</li>
+            <li><a href="tel:+919829895006" data-phone-link data-phone-text>+91 98298 95006</a></li>
             <li><a href="mailto:contact@shreeomhospital.com">contact@shreeomhospital.com</a></li>
           </ul>
           <button type="button" class="btn btn--accent btn--sm footer__cta" data-open-appointment>Book Appointment</button>
@@ -426,7 +427,7 @@
     <div class="modal__panel modal__panel--call">
       <button class="modal__close" type="button" data-close-call aria-label="Close phone number dialog">&times;</button>
       <h2 class="modal__title" id="callModalTitle">Call Us</h2>
-      <p class="modal__subtitle">Reach Shree Om Hospital on the number below.</p>
+      <p class="modal__subtitle" id="callModalSubtitle">Reach Shree Om Hospital on the number below.</p>
       <p class="call-modal__number" id="callModalPhone"></p>
       <p class="call-modal__hint">Available Mon–Sat, 9:00 AM – 8:00 PM</p>
     </div>
@@ -438,7 +439,7 @@
     <div class="modal__panel">
       <button class="modal__close" type="button" data-close-appointment aria-label="Close appointment form">&times;</button>
       <h2 class="modal__title" id="modalTitle">Book an Appointment</h2>
-      <p class="modal__subtitle">Fill in your details and we will confirm your appointment via WhatsApp.</p>
+      <p class="modal__subtitle">Fill in your details and send them to us on WhatsApp — the app on your phone, or WhatsApp Web on desktop.</p>
 
       <form id="appointmentForm" class="appointment-form" novalidate>
         <div class="form-group">
@@ -482,7 +483,7 @@
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.89-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
           Send via WhatsApp
         </button>
-        <p class="form-note">By submitting, your appointment request will be sent to our WhatsApp helpline for confirmation.</p>
+        <p class="form-note">Your request opens WhatsApp with these details ready to send to +91 98298 95006.</p>
       </form>
     </div>
   </div>
