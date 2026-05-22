@@ -1,6 +1,6 @@
-# Om Sai Hospital Website
+# Shree Om Hospital Website
 
-A public-facing hospital website built for **Om Sai Hospital**, highlighting general surgery and gynecology services, doctor profiles, facilities, and ways for patients to get in touch or book appointments.
+A public-facing hospital website built for **Shree Om Hospital**, highlighting general surgery and gynecology services, doctor profiles, facilities, and ways for patients to get in touch or book appointments.
 
 ## Tech stack
 
@@ -46,4 +46,4 @@ Then visit `http://localhost:8000` (port may vary).
 
 ## License
 
-Private project for Om Sai Hospital. All rights reserved unless otherwise specified by the hospital.
+Private project for Shree Om Hospital. All rights reserved unless otherwise specified by the hospital.

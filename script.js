@@ -1,5 +1,5 @@
 /**
- * Om Sai Hospital — Landing Page Scripts
+ * Shree Om Hospital — Landing Page Scripts
  * WhatsApp appointment booking, navigation, and UI interactions
  */
 
@@ -10,7 +10,9 @@ const CONFIG = {
   // WhatsApp number in international format without + or spaces
   // Example: 919876543210 for +91 98765 43210
   whatsappNumber: '919876543210',
-  hospitalName: 'Om Sai Hospital',
+  hospitalName: 'Shree Om Hospital',
+  // 10-digit mobile for Call Now (no country code)
+  phoneNumber: '9829895006',
 };
 
 // ============================================
@@ -20,6 +22,8 @@ const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');
 const navbar = document.getElementById('navbar');
 const modal = document.getElementById('appointmentModal');
+const callModal = document.getElementById('callModal');
+const callModalPhone = document.getElementById('callModalPhone');
 const appointmentForm = document.getElementById('appointmentForm');
 const doctorSelect = document.getElementById('doctor');
 const preferredDateInput = document.getElementById('preferredDate');
@@ -102,7 +106,9 @@ function openAppointmentModal(preselectedDoctor = '') {
 function closeAppointmentModal() {
   modal.classList.remove('active');
   modal.setAttribute('aria-hidden', 'true');
-  document.body.style.overflow = '';
+  if (!callModal?.classList.contains('active')) {
+    document.body.style.overflow = '';
+  }
   clearFormErrors();
 }
 
@@ -118,9 +124,72 @@ document.querySelectorAll('[data-close-appointment]').forEach((el) => {
 });
 
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && modal.classList.contains('active')) {
+  if (e.key !== 'Escape') return;
+  if (callModal && callModal.classList.contains('active')) {
+    closeCallModal();
+  } else if (modal.classList.contains('active')) {
     closeAppointmentModal();
   }
+});
+
+// ============================================
+// Call Now — desktop popup, mobile dialer
+// ============================================
+const CALL_MOBILE_MEDIA = '(max-width: 768px)';
+
+function formatPhoneDisplay(number) {
+  if (number.length === 10) {
+    return `+91 ${number.slice(0, 5)} ${number.slice(5)}`;
+  }
+  return `+91 ${number}`;
+}
+
+function getTelHref() {
+  return `tel:+91${CONFIG.phoneNumber}`;
+}
+
+function isMobileCallContext() {
+  return window.matchMedia(CALL_MOBILE_MEDIA).matches;
+}
+
+function openCallModal() {
+  if (!callModal) return;
+  if (callModalPhone) {
+    callModalPhone.textContent = formatPhoneDisplay(CONFIG.phoneNumber);
+  }
+  callModal.classList.add('active');
+  callModal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCallModal() {
+  if (!callModal) return;
+  callModal.classList.remove('active');
+  callModal.setAttribute('aria-hidden', 'true');
+  if (!modal.classList.contains('active')) {
+    document.body.style.overflow = '';
+  }
+}
+
+document.querySelectorAll('[data-call-now]').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    if (navMenu?.classList.contains('open')) {
+      navMenu.classList.remove('open');
+      navToggle?.classList.remove('active');
+      navToggle?.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    if (isMobileCallContext()) {
+      window.location.href = getTelHref();
+      return;
+    }
+    openCallModal();
+  });
+});
+
+document.querySelectorAll('[data-close-call]').forEach((el) => {
+  el.addEventListener('click', closeCallModal);
 });
 
 // ============================================
